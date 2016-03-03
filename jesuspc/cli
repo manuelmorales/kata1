@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative './kata1'
+require_relative './lib/kata1'
 
 puts Kata1.call(File.join(Dir.pwd, ARGV.first))
