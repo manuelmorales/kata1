@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
 RSpec.describe Loc do
-  subject { Loc.tap { |s| s.output = output } }
+  subject { Loc.new.tap { |s| s.output = output } }
   let(:output) { StringIO.new }
 
   describe '.for_dir' do
