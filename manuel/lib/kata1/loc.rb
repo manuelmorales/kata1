@@ -17,7 +17,7 @@ module Kata1
     private
 
     def files_in(dir)
-      Dir.glob("#{dir}/**/*")
+      Dir.glob("#{dir}/**/*").reject { |e| File.directory?(e) }
     end
 
     def lines_in_file(f)

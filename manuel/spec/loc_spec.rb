@@ -8,7 +8,7 @@ RSpec.describe Loc do
     it 'works' do
       subject.for_dir('spec/assets/basic_example')
       output.rewind
-      expect(output.read).to match(/5 lines/)
+      expect(output.read).to match(/9 lines/)
     end
   end
 end
