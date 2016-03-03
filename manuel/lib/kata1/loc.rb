@@ -17,11 +17,11 @@ module Kata1
     private
 
     def files_in(dir)
-      Dir.glob("#{dir}/**/*").reject { |e| File.directory?(e) }
+      Dir.glob("#{dir}/**/*").reject { |file| File.directory?(file) }
     end
 
-    def lines_in_file(f)
-      File.open(f,'r').each_line.count
+    def lines_in_file(file_path)
+      File.read(file_path).lines.size
     end
   end
 end
