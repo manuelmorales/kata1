@@ -1,7 +1,7 @@
 
 class Kata1
   def self.start directory
-    ruby_files = Dir.glob("#{directory}/**/*").select { |file| file.match(/.rb/) }
+    ruby_files = Dir.glob("#{directory}/**/*").select { |file| File.file?(file) }#file.match(/.rb/) }
     total_lines = 0
     ruby_files.each do |filename|
       count = File.foreach(filename).inject(0) {|c, line| c+1}
