@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require_relative File.dirname(__FILE__) + '/lib/kata1/kata1'
+
+directory = ARGV.first
+puts "Directory: #{directory}"
+
+Kata1.start directory
