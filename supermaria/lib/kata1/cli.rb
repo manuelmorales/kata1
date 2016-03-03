@@ -4,7 +4,8 @@ module Kata1
   class Cli < MiniCli::Base
     desc 'start', 'Count the lines of the files inside a directory'
     def start directory
-      Kata1::LinesCounter.count(directory)
+      n = Kata1::LinesCounter.new.count(directory)
+      puts "#{n} lines"
     end
   end
 end
