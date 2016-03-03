@@ -7,11 +7,21 @@ module Kata1
     end
 
     def for_dir(dir)
-      total = Dir.glob("#{dir}/**/*").map do |f|
-        File.open(f,'r').each_line.count
+      total = files_in(dir).map do |f|
+        lines_in_file(f)
       end.reduce(:+)
 
       output.puts "#{total} lines"
+    end
+
+    private
+
+    def files_in(dir)
+      Dir.glob("#{dir}/**/*")
+    end
+
+    def lines_in_file(f)
+      File.open(f,'r').each_line.count
     end
   end
 end
